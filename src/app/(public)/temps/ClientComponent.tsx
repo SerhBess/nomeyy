@@ -4,6 +4,7 @@ import { cookieName } from "@/config/i18n";
 import { Button } from "@/shared/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { SseListener } from "./SseListener";
 
 const setLanguageCookie = (value: string) => {
   document.cookie = `${cookieName}=${value}`;
@@ -28,6 +29,7 @@ const ClientComponent = () => {
       >
         Change language to {i18n.resolvedLanguage === "en" ? "de" : "en"}
       </Button>
+      <SseListener />
 
       <p className="underline">ClientComponent: </p>
       <p>Title: {t("title")}</p>
